@@ -25,6 +25,11 @@
 #
 ############################################################################
 
+# Todo:
+# * (0.1)
+#  - upload to GRASS repo/wiki
+#  - add minimal HTML docs
+
 #%Module
 #% description: Fill data holes using 2D interpolation.
 #% keywords: raster interpolation
@@ -44,6 +49,14 @@
 #% description: Name for output raster map
 #% required: yes
 #%end
+#%option
+#% key: method
+#% type: string
+#% description: Interpolation method
+#% required : no
+#% options: linear, nearest, cubic
+#% answer: linear
+#%end
 
 
 import numpy as np                      # [1]
@@ -58,6 +71,7 @@ def main():
     # parse arguments
     input = options['input']
     output = options['output']
+    method = options['method']
 
     # read map with grass array
     a = garray.array(dtype='f4')
@@ -72,7 +86,7 @@ def main():
     gridx, gridy = np.mgrid[0:rows, 0:cols]  # WORKS!
 
     # interpolate and write map
-    a[...] = griddata(points, data, (gridx, gridy), method='nearest')
+    a[...] = griddata(points, data, (gridx, gridy), method=method)
     a.write(output)
 
     return
