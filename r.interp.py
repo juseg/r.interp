@@ -1,29 +1,27 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
-############################################################################
-#
-# MODULE:      r.interp
-#
-# AUTHOR(S):   Julien Seguinot
-#
-# PURPOSE:     Fill data holes using 2D interpolation.
-#
-# COPYRIGHT:   (c) 2016 Julien Seguinot
-#
-#     This program is free software: you can redistribute it and/or modify
-#     it under the terms of the GNU General Public License as published by
-#     the Free Software Foundation, either version 3 of the License, or
-#     (at your option) any later version.
-#
-#     This program is distributed in the hope that it will be useful,
-#     but WITHOUT ANY WARRANTY; without even the implied warranty of
-#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#     GNU General Public License for more details.
-#
-#     You should have received a copy of the GNU General Public License
-#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-############################################################################
+"""
+MODULE:     r.interp
+
+AUTHOR(S):  Julien Seguinot <seguinot@vaw.baug.ethz.ch>.
+
+PURPOSE:    Fill data holes using 2D interpolation.
+
+COPYRIGHT:  (c) 2016 Julien Seguinot
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
 
 # Todo:
 # * (0.1)
@@ -66,7 +64,7 @@ import grass.script.array as garray
 
 
 def main():
-    """main function, called at execution time"""
+    """Main function, called at execution time."""
 
     # parse arguments
     input = options['input']
@@ -99,3 +97,4 @@ if __name__ == "__main__":
 # Links
 # [1] http://numpy.scipy.org
 # [2] http://www.scipy.org
+
